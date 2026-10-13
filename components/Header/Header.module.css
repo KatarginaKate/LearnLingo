@@ -1,0 +1,114 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1184px;
+  height: 66px;
+  margin: 0 auto;
+  color: #121417;
+  font-size: 16px;
+}
+
+.brand,
+.navigation,
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.brandMark {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to bottom,
+    #338AF3 0 50%,
+    #FFDA44 50% 100%
+  );
+}
+
+.navigation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 28px;
+}
+
+.navigation a,
+.login {
+  transition: color 160ms ease;
+}
+
+.navigation a:hover,
+.login:hover {
+  color: var(--color-accent);
+}
+
+.account {
+  gap: 14px;
+}
+
+.login {
+  font-weight: 700;
+}
+
+.registration {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 166px;
+  min-height: 48px;
+  padding: 14px 39px;
+  border-radius: 12px;
+  background: #121417;
+  color: #fff;
+  font-weight: 700;
+  transition: background-color 160ms ease;
+}
+
+.registration:hover {
+  background: #34373b;
+}
+
+@media (max-width: 560px) {
+  .header {
+    height: 62px;
+    font-size: 12px;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+
+  .account {
+    gap: 9px;
+  }
+
+  .registration {
+    min-width: 0;
+    min-height: 36px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .navigation {
+    display: none;
+  }
+
+  .account {
+    margin-left: auto;
+  }
+}

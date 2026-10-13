@@ -1,0 +1,134 @@
+.hero {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  height: 530px;
+}
+
+.copy,
+.visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.copy {
+  display: flex;
+  flex: 720 1 720px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 530px;
+  padding: clamp(28px, 4.4vw, 64px);
+  background: #f7f7f7;
+}
+
+.copy h1 {
+  max-width: 548px;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.17;
+  letter-spacing: -0.02em;
+  color: #121417;
+  text-wrap: balance;
+}
+
+.copy em {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: var(--color-accent-soft);
+  font-weight: 400;
+}
+
+.copy p {
+  max-width: 471px;
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 138%;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.callToAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 267px;
+  min-height: 60px;
+  margin-top: 64px;
+  border-radius: 12px;
+  background: #f4c550;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.56;
+  color: #121417;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.callToAction:hover {
+  transform: translateY(-2px);
+  background: #e9b53f;
+}
+
+.visual {
+  flex: 568 1 568px;
+  min-width: 0;
+  height: 530px;
+  background: var(--color-accent-soft);
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    gap: 14px;
+    height: auto;
+  }
+
+  .copy {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 340px;
+    padding: 34px 28px;
+  }
+
+  .copy h1 {
+    max-width: 480px;
+    font-size: clamp(30px, 8vw, 42px);
+  }
+
+  .copy p {
+    margin-top: 18px;
+  }
+
+  .callToAction {
+    margin-top: 26px;
+  }
+
+  .visual {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.07;
+  }
+}
+
+@media (max-width: 390px) {
+  .copy {
+    min-height: 320px;
+    padding: 28px 22px;
+  }
+
+  .copy p {
+    font-size: 12px;
+  }
+}
