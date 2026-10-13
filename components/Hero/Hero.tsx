@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -13,7 +14,7 @@ export default function Hero() {
 					Elevate your language proficiency to new heights by connecting with
 					highly qualified and experienced tutors.
 				</p>
-				<a className={styles.callToAction} href="#teachers">Get started</a>
+				<Link className={styles.callToAction} href="/teachers">Get started</Link>
 			</div>
 			<div className={styles.visual}>
 				<Image

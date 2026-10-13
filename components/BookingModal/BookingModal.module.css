@@ -1,0 +1,209 @@
+.modal {
+	width: min(100%, 530px);
+	padding: 34px 30px 28px;
+}
+
+.title,
+.success h2 {
+	margin-bottom: 8px;
+	color: #121417;
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 1.15;
+}
+
+.description,
+.success p {
+	margin-bottom: 14px;
+	color: #606267;
+	font-size: 13px;
+	line-height: 1.35;
+}
+
+.teacher {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 16px;
+}
+
+.teacherAvatar {
+	flex: 0 0 42px;
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	border: 1px solid var(--color-accent-soft);
+	border-radius: 50%;
+	background: #f3f3f3;
+}
+
+.teacherAvatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.teacherAvatar span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	color: #606267;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.teacher > div:last-child {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.teacher > div:last-child span {
+	color: #8a8d91;
+	font-size: 10px;
+}
+
+.teacher > div:last-child strong {
+	color: #121417;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.goals {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0 0 6px;
+	padding: 0;
+	border: 0;
+}
+
+.goals legend {
+	margin-bottom: 10px;
+	color: #121417;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.goal {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 16px;
+	color: #303236;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+.goal input {
+	width: 13px;
+	height: 13px;
+	margin: 0;
+	accent-color: var(--color-accent);
+}
+
+.goalError {
+	color: #b42318;
+	font-size: 11px;
+}
+
+.field {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	color: #121417;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.field input {
+	width: 100%;
+	height: 42px;
+	padding: 0 12px;
+	border: 1px solid #dedfe1;
+	border-radius: 10px;
+	outline: none;
+	background: #fff;
+	color: #121417;
+	font: inherit;
+	font-size: 12px;
+}
+
+.field input:focus {
+	border-color: #d2a62f;
+	box-shadow: 0 0 0 3px rgb(244 197 80 / 20%);
+}
+
+.field input[aria-invalid="true"] {
+	border-color: #b42318;
+}
+
+.field input::placeholder {
+	color: #66696d;
+	opacity: 1;
+}
+
+.field small {
+	color: #b42318;
+	font-size: 11px;
+	font-weight: 400;
+}
+
+.visuallyHidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.submit {
+	width: 100%;
+	min-height: 48px;
+	margin-top: 8px;
+	border: 0;
+	border-radius: 10px;
+	background: var(--color-accent);
+	color: #121417;
+	font: inherit;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.submit:disabled {
+	opacity: .7;
+	cursor: wait;
+}
+
+.success {
+	padding: 16px 0 0;
+}
+
+.success p {
+	margin-bottom: 18px;
+}
+
+@media (max-width: 560px) {
+	.modal {
+		padding: 48px 22px 24px;
+	}
+
+	.title,
+	.success h2 {
+		font-size: 24px;
+	}
+}

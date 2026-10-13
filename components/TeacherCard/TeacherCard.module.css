@@ -1,0 +1,439 @@
+.card {
+  position: relative;
+  width: min(100%, 1184px);
+  height: 328px;
+  margin-inline: auto;
+  padding: 24px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgb(18 20 23 / 6%);
+}
+
+.cardExpanded {
+  height: auto;
+  min-height: 328px;
+}
+
+.cardExpanded .cardLayout {
+  height: auto;
+  min-height: 278px;
+}
+
+.cardLayout {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  height: 100%;
+}
+
+.photoColumn {
+  flex: 0 0 133px;
+}
+
+.cardContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 278px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.avatarWrap {
+  position: relative;
+  flex: 0 0 112px;
+  width: 120px;
+  height: 120px;
+  padding: 8px;
+  border: 3px solid var(--color-accent-soft);
+  border-radius: 50%;
+}
+
+.avatar {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarFallback {
+  position: absolute;
+  inset: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+  color: #606267;
+  font-size: 25px;
+  font-weight: 600;
+  z-index: 0;
+}
+
+.online {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  z-index: 2;
+}
+
+.online svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.teacherName {
+  flex: 0 0 240px;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8a8a89;
+}
+
+.teacherName h2 {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+  color: #121417;
+}
+
+.metrics {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  min-width: 0;
+  color: #121417;
+  font-size: 16px;
+}
+
+.metrics > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-inline: 16px;
+  white-space: nowrap;
+}
+
+.metrics > span + span {
+  border-left: 1px solid rgba(18, 20, 23, 0.2);
+}
+
+.metrics > span:first-child {
+  padding-left: 0;
+}
+
+.metrics svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+}
+
+.metrics .star,
+.review .star {
+  fill: var(--color-accent);
+  stroke: var(--color-accent);
+}
+
+.metrics strong {
+  font-weight: 500;
+}
+
+.price {
+  color: #38a66a;
+}
+
+.favorite {
+  flex: 0 0 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: transparent;
+  color: #121417;
+  cursor: pointer;
+}
+
+.favorite svg {
+  width: 26px;
+  height: 26px;
+  fill: transparent;
+  stroke: currentColor;
+  transition:
+    fill 140ms ease,
+    color 140ms ease;
+}
+
+.favoriteActive {
+  color: #e85a64;
+}
+
+.favoriteActive svg {
+  fill: #e85a64;
+}
+
+.details {
+  margin-top: 32px;
+  color: #121417;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.detailLine > span:first-child {
+  color: #8a8d91;
+}
+
+.detailLine > span:not(:first-child) {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #121417;
+}
+
+.expanded {
+  margin-top: 14px;
+}
+
+.expanded > p {
+  margin-bottom: 18px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.expanded .review:last-child {
+  margin-bottom: 0;
+}
+
+.reviewTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reviewerAvatar {
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  background: var(--color-accent-soft);
+  color: #6e5310;
+  font-weight: 700;
+}
+
+.review strong {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8a8a89;
+  font-weight: 500;
+}
+
+.review span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #121417;
+}
+
+.review .star {
+  width: 16px;
+  height: 16px;
+}
+
+.review p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #121417;
+}
+
+.readMore {
+  margin: 16px 0 32px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #121417;
+  cursor: pointer;
+}
+
+.expanded + .readMore {
+  margin-top: 16px;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.levels span {
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #121417;
+}
+
+.levels .levelActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.bookButton {
+  min-width: 232px;
+  min-height: 60px;
+  padding: 16px 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: #121417;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.56;
+  cursor: pointer;
+}
+
+.bookButton:hover {
+  transform: translateY(-2px);
+  background: #ffdc86;
+}
+
+.visual {
+  flex: 568 1 568px;
+  min-width: 0;
+  height: 100%;
+  background: var(--color-accent-soft);
+}
+
+@media (max-width: 900px) {
+  .cardHeader {
+    flex-wrap: wrap;
+  }
+
+  .teacherName {
+    flex: 1 1 160px;
+  }
+
+  .metrics {
+    order: 2;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .metrics > span + span {
+    border-left: 0;
+  }
+
+  .metrics > span {
+    padding-inline: 0;
+  }
+
+  .favorite {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .card {
+    height: auto;
+    min-height: 0;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .cardLayout {
+    gap: 14px;
+  }
+
+  .photoColumn {
+    flex-basis: 88px;
+  }
+
+  .avatarWrap {
+    flex-basis: 88px;
+    width: 88px;
+    height: 88px;
+    padding: 6px;
+    border-width: 2px;
+  }
+
+  .teacherName h2 {
+    font-size: 19px;
+  }
+
+  .metrics {
+    gap: 8px 12px;
+    margin-left: 0;
+    font-size: 11px;
+  }
+
+  .favorite {
+    margin-left: auto;
+  }
+
+  .details {
+    margin-top: 16px;
+    font-size: 13px;
+  }
+
+  .cardFooter {
+    margin-top: 16px;
+  }
+}

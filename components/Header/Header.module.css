@@ -52,6 +52,7 @@
 }
 
 .navigation a:hover,
+.navigation a.active,
 .login:hover {
   color: var(--color-accent);
 }
@@ -85,7 +86,9 @@
   border-radius: 12px;
   background: #121417;
   color: #fff;
+	font: inherit;
   font-weight: 700;
+	cursor: pointer;
   transition: background-color 160ms ease;
 }
 

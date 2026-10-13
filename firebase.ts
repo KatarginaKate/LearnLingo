@@ -1,18 +1,18 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  
-  apiKey: "AIzaSyDutNP28xmLduKWF4ItZBUhQlAeCLpPFGM",
-  authDomain: "learnlingo-2bc64.firebaseapp.com",
-  databaseURL: "https://learnlingo-2bc64-default-rtdb.firebaseio.com",
-  projectId: "learnlingo-2bc64",
-  storageBucket: "learnlingo-2bc64.firebasestorage.app",
-  messagingSenderId: "696559010801",
-  appId: "1:696559010801:web:1ac383832eb2a5daeefa50",
-  measurementId: "G-25N3M6D7SL"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL!,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID!,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
 };
 
-const app = initializeApp(firebaseConfig);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 
+export const auth = getAuth(app);
 export const db = getDatabase(app);

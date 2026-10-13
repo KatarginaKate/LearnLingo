@@ -1,0 +1,10 @@
+.modal {
+	width: min(100%, 530px);
+}
+
+.notice {
+	margin-bottom: 18px;
+	color: #9a6810;
+	font-size: 14px;
+	line-height: 1.45;
+}

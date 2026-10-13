@@ -40,3 +40,47 @@ a {
 html {
   color-scheme: light;
 }
+
+.route-main {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+  padding: 0 24px;
+}
+
+.private-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #121417;
+  text-align: center;
+}
+
+.private-state h1 {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 500;
+}
+
+.private-state p {
+  color: #606267;
+}
+
+.private-state button {
+  min-height: 46px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--color-accent);
+  color: #121417;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .route-main {
+    min-height: calc(100svh - 68px);
+    padding: 0 20px;
+  }
+}

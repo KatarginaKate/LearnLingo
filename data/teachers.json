@@ -1,0 +1,146 @@
+[
+  {
+    "id": "anna-smith",
+    "name": "Anna",
+    "surname": "Smith",
+    "languages": ["English", "German"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate"],
+    "rating": 4.9,
+    "reviews": [
+      { "reviewer": "Marta", "comment": "Anna makes every lesson practical and easy to follow. I feel much more confident speaking now." },
+      { "reviewer": "Dmytro", "comment": "A thoughtful teacher who adapts each lesson to your goals." }
+    ],
+    "price_per_hour": 25,
+    "lessons_done": 1840,
+    "avatar_url": "https://randomuser.me/api/portraits/women/44.jpg",
+    "lesson_info": "Build confidence through guided conversation, clear grammar explanations, and useful vocabulary for everyday situations.",
+    "conditions": ["Cancellation up to 12 hours before the lesson", "Lessons for adults and teenagers"],
+    "experience": "Certified language tutor with 8 years of experience helping students speak English with confidence."
+  },
+  {
+    "id": "marco-bianchi",
+    "name": "Marco",
+    "surname": "Bianchi",
+    "languages": ["Italian", "English"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate", "B2 Upper-Intermediate"],
+    "rating": 5.0,
+    "reviews": [
+      { "reviewer": "Sofia", "comment": "Marco brings Italian culture into every lesson. The classes are fun and well structured." },
+      { "reviewer": "Oleh", "comment": "I started as a complete beginner and can already hold simple conversations." }
+    ],
+    "price_per_hour": 30,
+    "lessons_done": 2265,
+    "avatar_url": "https://randomuser.me/api/portraits/men/32.jpg",
+    "lesson_info": "Learn Italian with a communicative approach, authentic materials, and a plan tailored to your pace.",
+    "conditions": ["Lessons for adults", "Conversation practice available"],
+    "experience": "Native Italian speaker and language coach with 10 years of teaching experience."
+  },
+  {
+    "id": "olena-kovalenko",
+    "name": "Olena",
+    "surname": "Kovalenko",
+    "languages": ["Ukrainian", "English"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate", "C1 Advanced"],
+    "rating": 4.8,
+    "reviews": [
+      { "reviewer": "James", "comment": "Olena explains Ukrainian grammar in a very approachable way." },
+      { "reviewer": "Iryna", "comment": "Every class is prepared with care and connects to real life." }
+    ],
+    "price_per_hour": 22,
+    "lessons_done": 1320,
+    "avatar_url": "https://randomuser.me/api/portraits/women/68.jpg",
+    "lesson_info": "Discover Ukrainian through conversation, practical vocabulary, and cultural context.",
+    "conditions": ["Lessons for adults and children", "Flexible learning plan"],
+    "experience": "Ukrainian language teacher with a master's degree and 6 years of online teaching."
+  },
+  {
+    "id": "lucas-martin",
+    "name": "Lucas",
+    "surname": "Martin",
+    "languages": ["French", "English"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate", "B2 Upper-Intermediate"],
+    "rating": 4.9,
+    "reviews": [
+      { "reviewer": "Nina", "comment": "Lucas helped me prepare for a move to France. I can handle daily conversations now." },
+      { "reviewer": "Tom", "comment": "Clear explanations and a relaxed atmosphere." }
+    ],
+    "price_per_hour": 28,
+    "lessons_done": 980,
+    "avatar_url": "https://randomuser.me/api/portraits/men/75.jpg",
+    "lesson_info": "Improve your French with conversation-led lessons and focused pronunciation practice.",
+    "conditions": ["Lessons for adults", "Exam preparation on request"],
+    "experience": "French tutor with 7 years of experience teaching learners from around the world."
+  },
+  {
+    "id": "yuki-tanaka",
+    "name": "Yuki",
+    "surname": "Tanaka",
+    "languages": ["Japanese", "English"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate"],
+    "rating": 5.0,
+    "reviews": [
+      { "reviewer": "Alex", "comment": "Yuki makes Japanese feel approachable and explains each writing system clearly." },
+      { "reviewer": "Leah", "comment": "A lovely teacher with lessons that are always engaging." }
+    ],
+    "price_per_hour": 32,
+    "lessons_done": 760,
+    "avatar_url": "https://randomuser.me/api/portraits/women/79.jpg",
+    "lesson_info": "Explore Japanese language and culture with a balanced focus on speaking, reading, and listening.",
+    "conditions": ["Lessons for adults and teenagers", "Beginner friendly"],
+    "experience": "Native Japanese tutor with 5 years of experience and a focus on practical communication."
+  },
+  {
+    "id": "diego-rojas",
+    "name": "Diego",
+    "surname": "Rojas",
+    "languages": ["Spanish", "English"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate", "B2 Upper-Intermediate"],
+    "rating": 4.9,
+    "reviews": [
+      { "reviewer": "Ella", "comment": "Diego's lessons are lively and I learn phrases I can use right away." },
+      { "reviewer": "Mark", "comment": "Great balance of conversation and grammar." }
+    ],
+    "price_per_hour": 24,
+    "lessons_done": 1575,
+    "avatar_url": "https://randomuser.me/api/portraits/men/54.jpg",
+    "lesson_info": "Speak Spanish from your first lesson with practical topics, useful expressions, and supportive feedback.",
+    "conditions": ["Lessons for adults and children", "Conversation clubs available"],
+    "experience": "Spanish teacher with 9 years of experience and a degree in language education."
+  },
+  {
+    "id": "emma-johnson",
+    "name": "Emma",
+    "surname": "Johnson",
+    "languages": ["English", "Spanish"],
+    "levels": ["A2 Elementary", "B1 Intermediate", "B2 Upper-Intermediate", "C1 Advanced"],
+    "rating": 4.8,
+    "reviews": [
+      { "reviewer": "Pavlo", "comment": "Emma helped me feel prepared for my English interview." },
+      { "reviewer": "Mila", "comment": "Her feedback is specific, kind, and easy to act on." }
+    ],
+    "price_per_hour": 27,
+    "lessons_done": 2040,
+    "avatar_url": "https://randomuser.me/api/portraits/women/25.jpg",
+    "lesson_info": "Reach your English goals with personalized speaking, writing, and exam preparation.",
+    "conditions": ["Lessons for adults", "IELTS preparation"],
+    "experience": "English language coach and IELTS specialist with 11 years of classroom and online experience."
+  },
+  {
+    "id": "pierre-dubois",
+    "name": "Pierre",
+    "surname": "Dubois",
+    "languages": ["French", "German"],
+    "levels": ["A1 Beginner", "A2 Elementary", "B1 Intermediate"],
+    "rating": 4.9,
+    "reviews": [
+      { "reviewer": "Katya", "comment": "Pierre is patient and always finds an interesting way to explain a new topic." },
+      { "reviewer": "Ben", "comment": "My French has improved steadily since we started lessons." }
+    ],
+    "price_per_hour": 26,
+    "lessons_done": 1130,
+    "avatar_url": "https://randomuser.me/api/portraits/men/11.jpg",
+    "lesson_info": "Develop natural French conversation and strengthen the grammar you need for everyday life.",
+    "conditions": ["Lessons for adults and teenagers", "Flexible schedule"],
+    "experience": "Experienced French teacher with 6 years of one-to-one online tutoring."
+  }
+]

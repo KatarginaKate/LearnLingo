@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Firebase setup
+
+Enable **Authentication > Sign-in method > Email/Password** in the Firebase console. Apply [`database.rules.json`](database.rules.json) to Realtime Database. The rules allow public reads of teachers and restrict profile/favorite data to the signed-in user.
+
+The app includes [`data/teachers.json`](data/teachers.json) as sample data. To import it, set `FIREBASE_API_KEY`, `FIREBASE_DATABASE_URL`, `FIREBASE_SEED_EMAIL`, and `FIREBASE_SEED_PASSWORD` in the shell for a Firebase account allowed to write the `teachers` collection, then run:
+
+```bash
+npm run seed:teachers
+```
+
+Keep seed credentials out of source control. Until the database is readable, the Teachers page uses the bundled sample data.
+
 ## Getting Started
 
 First, run the development server:
