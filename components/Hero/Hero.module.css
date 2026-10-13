@@ -3,7 +3,7 @@
   align-items: stretch;
   gap: 24px;
   width: 100%;
-  height: 530px;
+  height: clamp(360px, calc(100dvh - 238px), 530px);
 }
 
 .copy,
@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 530px;
+  height: 100%;
   padding: clamp(28px, 4.4vw, 64px);
   background: #f7f7f7;
 }
@@ -72,13 +72,13 @@
 
 .callToAction:hover {
   transform: translateY(-2px);
-  background: #e9b53f;
+  background: #ffdc86;
 }
 
 .visual {
   flex: 568 1 568px;
   min-width: 0;
-  height: 530px;
+  height: 100%;
   background: var(--color-accent-soft);
 }
 
@@ -86,49 +86,121 @@
   object-fit: cover;
 }
 
+@media (max-height: 700px) and (min-width: 701px) {
+  .copy {
+    padding: 28px;
+  }
+
+  .copy h1 {
+    font-size: 40px;
+  }
+
+  .copy p {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .callToAction {
+    min-height: 52px;
+    margin-top: 28px;
+  }
+}
+
 @media (max-width: 700px) {
   .hero {
+    flex: 1;
     flex-direction: column;
     gap: 14px;
+    min-height: 0;
     height: auto;
   }
 
   .copy {
-    flex: none;
+    flex: 1;
     width: 100%;
+    min-height: 0;
     height: auto;
-    min-height: 340px;
-    padding: 34px 28px;
+    padding: 20px 22px;
   }
 
   .copy h1 {
     max-width: 480px;
-    font-size: clamp(30px, 8vw, 42px);
+    font-size: clamp(25px, 7vw, 32px);
   }
 
   .copy p {
-    margin-top: 18px;
+    margin-top: 12px;
+    font-size: 13px;
   }
 
   .callToAction {
-    margin-top: 26px;
+    min-height: 48px;
+    margin-top: 16px;
   }
 
   .visual {
-    flex: none;
+    flex: 1;
     width: 100%;
+    min-height: 0;
     height: auto;
-    aspect-ratio: 1.07;
+    aspect-ratio: auto;
   }
 }
 
 @media (max-width: 390px) {
   .copy {
-    min-height: 320px;
-    padding: 28px 22px;
+    padding: 16px 18px;
+  }
+
+  .copy h1 {
+    font-size: clamp(23px, 7vw, 27px);
   }
 
   .copy p {
     font-size: 12px;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 700px) {
+  .copy {
+    padding: 12px 16px;
+  }
+
+  .copy h1 {
+    font-size: clamp(21px, 6vw, 24px);
+    line-height: 1.08;
+  }
+
+  .copy p {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .callToAction {
+    min-height: 40px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-height: 600px) and (max-width: 390px) {
+  .copy {
+    padding: 8px 12px;
+  }
+
+  .copy h1 {
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  .copy p {
+    margin-top: 6px;
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  .callToAction {
+    min-height: 36px;
+    margin-top: 8px;
   }
 }

@@ -13,7 +13,12 @@ export default function Header() {
 				<a href="#teachers">Teachers</a>
 			</nav>
 			<div className={styles.account}>
-				<a className={styles.login} href="#login">Log in</a>
+				<a className={styles.login} href="#login">
+					<svg className={styles.loginIcon} aria-hidden="true">
+						<use href="/icons/sprite.svg#icon-log-in" />
+					</svg>
+					<span>Log in</span>
+				</a>
 				<a className={styles.registration} href="#registration">Registration</a>
 			</div>
 		</header>

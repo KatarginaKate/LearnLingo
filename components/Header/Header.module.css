@@ -3,10 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: min(1184px, 100%);
   max-width: 1184px;
-  height: 66px;
-  margin: 0 auto;
+  height: 48px;
+  margin: 20px auto 0;
   color: #121417;
   font-size: 16px;
 }
@@ -61,7 +61,18 @@
 }
 
 .login {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 700;
+}
+
+.loginIcon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: var(--color-accent);
 }
 
 .registration {
@@ -84,7 +95,7 @@
 
 @media (max-width: 560px) {
   .header {
-    height: 62px;
+    height: 48px;
     font-size: 12px;
   }
 
