@@ -68,6 +68,22 @@
   font-weight: 700;
 }
 
+.logout {
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.logout:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 .loginIcon {
   width: 20px;
   height: 20px;

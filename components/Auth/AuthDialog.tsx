@@ -15,7 +15,11 @@ type AuthDialogProps = {
 
 export default function AuthDialog({ mode, notice, onModeChange, onClose }: AuthDialogProps) {
 	return (
-		<Modal title={mode === "login" ? "Log in" : "Registration"} onClose={onClose} className={styles.modal}>
+		<Modal
+			title={mode === "login" ? "Log in" : "Registration"}
+			onClose={onClose}
+			className={`${styles.modal} ${mode === "register" ? styles.registerModal : ""}`}
+		>
 			{notice && <p className={styles.notice}>{notice}</p>}
 			{mode === "login" ? (
 				<LoginForm onSuccess={onClose} onRegister={() => onModeChange("register")} />

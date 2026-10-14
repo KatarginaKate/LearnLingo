@@ -1,5 +1,18 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useRouter } from "next/navigation";
+import RegisterForm from "../../components/Auth/RegisterForm/RegisterForm";
+import styles from "./page.module.css";
 
 export default function RegisterPage() {
-	redirect("/");
+	const router = useRouter();
+
+	return (
+		<main className={styles.page}>
+			<RegisterForm
+				onSuccess={() => router.replace("/")}
+				onLogin={() => router.push("/login")}
+			/>
+		</main>
+	);
 }

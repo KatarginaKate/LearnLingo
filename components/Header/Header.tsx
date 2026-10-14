@@ -23,7 +23,7 @@ export default function Header() {
 			</nav>
 			<div className={styles.account}>
 				{user ? (
-					<button className={styles.login} type="button" onClick={() => void logOut()}>
+					<button className={`${styles.login} ${styles.logout}`} type="button" onClick={() => void logOut()}>
 						<span>{user.displayName ?? "Account"}</span>
 						<span>Log out</span>
 					</button>

@@ -1,5 +1,11 @@
-.modal {
-	width: min(100%, 530px);
+.modal.modal {
+	width: min(100%, 566px);
+	height: 506px;
+	padding: 64px;
+}
+
+.registerModal.registerModal {
+	height: 600px;
 }
 
 .notice {
@@ -7,4 +13,12 @@
 	color: #9a6810;
 	font-size: 14px;
 	line-height: 1.45;
+}
+
+@media (max-width: 560px) {
+	.modal.modal {
+		height: auto;
+		max-height: 96dvh;
+		padding: 54px 28px 32px;
+	}
 }
