@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
-
 export default function BookingPage() {
-	redirect("/teachers");
+	return null;
 }
+

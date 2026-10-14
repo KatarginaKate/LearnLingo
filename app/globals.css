@@ -76,6 +76,12 @@ html {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.private-state button:hover {
+  transform: translateY(-1px);
+  background: #ffdc86;
 }
 
 @media (max-width: 560px) {

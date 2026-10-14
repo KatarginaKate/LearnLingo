@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import Header from "../components/Header/Header";
+import AppRouter from "../components/AppRouter";
 import Providers from "../providers/Providers";
 import "./globals.css";
 
@@ -15,13 +15,12 @@ export const metadata: Metadata = {
   description: "Learn a language with highly qualified, experienced tutors.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout() {
   return (
     <html lang="en" className={roboto.variable}>
       <body>
         <Providers>
-          <Header />
-          {children}
+          <AppRouter />
         </Providers>
       </body>
     </html>

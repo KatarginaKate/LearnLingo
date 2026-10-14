@@ -1,48 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 LearnLingo
 
-## Firebase setup
+**LearnLingo** is a language learning platform that helps learners find language tutors, compare teaching styles, save favorites, and request trial lessons.
 
-Enable **Authentication > Sign-in method > Email/Password** in the Firebase console. Apply [`database.rules.json`](database.rules.json) to Realtime Database. The rules allow public reads of teachers and restrict profile/favorite data to the signed-in user.
+🔗 **Features** · 🛠️ **Tech Stack** · 🚀 **Getting Started** · 🔥 **Firebase** · 📁 **Project Structure**
 
-The app includes [`data/teachers.json`](data/teachers.json) as sample data. To import it, set `FIREBASE_API_KEY`, `FIREBASE_DATABASE_URL`, `FIREBASE_SEED_EMAIL`, and `FIREBASE_SEED_PASSWORD` in the shell for a Firebase account allowed to write the `teachers` collection, then run:
+---
 
-```bash
+## ✨ Features
+
+- 👩‍🏫 Browse teacher profiles with languages, teaching levels, experience, reviews, and hourly rates.
+- 🔎 Filter teachers by language, learner level, and maximum hourly price.
+- 📖 Expand teacher profiles to read more details.
+- 📅 Request a trial lesson with a selected teacher.
+- 🔐 Create an account and sign in using Firebase Authentication.
+- ❤️ Save teachers to a personal favorites list.
+- 📦 Use bundled sample teacher data when live teacher records are unavailable.
+
+## 🗺️ Routes
+
+| Path | Page | Description |
+| --- | --- | --- |
+| `/` | 🏠 Home | Welcome page |
+| `/teachers` | 👩‍🏫 Teachers | Teacher directory and filters |
+| `/favorites` | ❤️ Favorites | Saved teachers (sign-in required) |
+| `/login` | 🔐 Login | Sign-in form |
+| `/register` | 📝 Register | Account registration |
+| `/booking` | 📅 Booking | Redirects to `/teachers` |
+
+React Router handles client-side route selection and navigation. Next.js provides the application shell, asset handling, and build tools.
+
+## 🛠️ Tech Stack
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-Authentication%20%26%20Database-FFCA28?logo=firebase&logoColor=black)
+![CSS Modules](https://img.shields.io/badge/CSS-Modules-1572B6?logo=cssmodules&logoColor=white)
+
+- ⚛️ **Next.js 16** and **React 19**
+- 🧭 **React Router 7** — client-side routing
+- 📘 **TypeScript** — type-safe development
+- 🎨 **CSS Modules** — component-scoped styling
+- 🔥 **Firebase Authentication** — user authentication
+- 🗄️ **Firebase Realtime Database** — teacher records and application data
+- 📋 **React Hook Form** and **Yup** — form handling and validation
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+
+Make sure you have installed:
+
+- 🟢 [Node.js](https://nodejs.org/) 20 or newer
+- 📦 npm
+
+### ⚙️ Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <your-repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd learnlingo
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+> 💡 **Note:** Configure Firebase before using authentication or live teacher data. If readable teacher records are unavailable, the application falls back to `data/teachers.json`.
+
+## 🔥 Firebase Configuration
+
+### 1. Create a Firebase project
+
+- Create a project in the [Firebase Console](https://console.firebase.google.com/).
+- Add a Firebase web app.
+- Enable **Authentication → Sign-in method → Email/Password**.
+- Create a **Realtime Database**.
+
+### 2. Configure environment variables
+
+Create a `.env.local` file in the project root and add your Firebase web-app configuration:
+
+```dotenv
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=https://your-project-default-rtdb.firebaseio.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+```
+
+🔄 Restart the development server after changing environment variables.
+
+🔒 Environment files are ignored by Git. Never commit private credentials or secrets.
+
+### 🛡️ Realtime Database Security
+
+The current `database.rules.json` grants read and write access at the root to any authenticated user. Firebase Realtime Database permissions granted at a parent path are inherited by its children, so more restrictive child rules cannot override these root-level grants.
+
+**Before deploying to production:**
+
+- 🔐 Replace permissive rules with least-privilege access policies.
+- 👤 Restrict access to user-specific data.
+- 🧪 Test database permissions using the Firebase Rules Playground or Emulator Suite.
+- 🚫 Never expose seed-account passwords or other private credentials in your repository.
+
+### 📦 Import Sample Teachers
+
+The seed script uploads `data/teachers.json` to the `teachers` path in Firebase.
+
+Use a Firebase account authorized to write to that path. In PowerShell, configure seed-only credentials for the current terminal session:
+
+```powershell
+$env:FIREBASE_API_KEY = "your-api-key"
+$env:FIREBASE_DATABASE_URL = "https://your-project-default-rtdb.firebaseio.com"
+$env:FIREBASE_SEED_EMAIL = "seed-account@example.com"
+$env:FIREBASE_SEED_PASSWORD = "your-password"
+
 npm run seed:teachers
 ```
 
-Keep seed credentials out of source control. Until the database is readable, the Teachers page uses the bundled sample data.
+> ⚠️ Keep seed credentials private. Use a dedicated account with limited permissions and never commit credentials to Git.
 
-## Getting Started
+## 📜 Available Scripts
 
-First, run the development server:
+| Command | Description |
+| --- | --- |
+| `npm run dev` | 🚀 Start the development server |
+| `npm run build` | 🏗️ Create a production build |
+| `npm start` | ▶️ Serve the production build |
+| `npm run lint` | 🧹 Run ESLint |
+| `npm run seed:teachers` | 📦 Import sample teachers into Firebase |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📁 Project Structure
+
+```text
+app/                  Next.js application shell and route entry files
+components/
+  AppRouter           React Router route table
+  ...                 Shared UI, forms, dialogs, and teacher cards
+data/
+  teachers.json       Bundled sample teacher records
+providers/             Authentication and favorites state
+services/              Firebase authentication, favorites, and teacher data
+public/                Images and SVG icon sprite
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔒 Security
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔑 Store local configuration in `.env.local`.
+- 🚫 Never commit passwords, private credentials, or service-account keys.
+- 🛡️ Configure Firebase Realtime Database rules before production deployment.
+- 👥 Enforce appropriate access controls for user-specific favorites and other private data.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👩‍💻 Author
 
-## Learn More
+**Kateryna Nehoda**
 
-To learn more about Next.js, take a look at the following resources:
+- 💼 [LinkedIn](https://www.linkedin.com/in/kateryna-nehoda/)
+- 🐙 [GitHub](https://github.com/KatarginaKate)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ If you find this project useful, consider giving it a star on GitHub.

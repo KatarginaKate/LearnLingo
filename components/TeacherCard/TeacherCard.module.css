@@ -187,11 +187,11 @@
 }
 
 .favoriteActive {
-  color: #e85a64;
+  color: var(--color-accent);
 }
 
 .favoriteActive svg {
-  fill: #e85a64;
+  fill: var(--color-accent);
 }
 
 .details {

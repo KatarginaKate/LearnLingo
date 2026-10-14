@@ -1,17 +1,17 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import RegisterForm from "../../components/Auth/RegisterForm/RegisterForm";
 import styles from "./page.module.css";
 
 export default function RegisterPage() {
-	const router = useRouter();
+	const navigate = useNavigate();
 
 	return (
 		<main className={styles.page}>
 			<RegisterForm
-				onSuccess={() => router.replace("/")}
-				onLogin={() => router.push("/login")}
+				onSuccess={() => navigate("/", { replace: true })}
+				onLogin={() => navigate("/login")}
 			/>
 		</main>
 	);

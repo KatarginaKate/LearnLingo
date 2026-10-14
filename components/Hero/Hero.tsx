@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
 					Elevate your language proficiency to new heights by connecting with
 					highly qualified and experienced tutors.
 				</p>
-				<Link className={styles.callToAction} href="/teachers">Get started</Link>
+				<Link className={styles.callToAction} to="/teachers">Get started</Link>
 			</div>
 			<div className={styles.visual}>
 				<Image

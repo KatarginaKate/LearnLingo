@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import teacherFixture from "../../data/teachers.json";
 import { useFavorites } from "../../providers/FavoritesProvider";
 import { getTeacherPage } from "../../services/teachers";
@@ -108,7 +108,7 @@ export default function TeacherDirectory({ favoritesOnly = false }: TeacherDirec
 					<p className={styles.eyebrow}>{favoritesOnly ? "YOUR COLLECTION" : "LEARN WITH THE RIGHT TEACHER"}</p>
 					<h1>{favoritesOnly ? "Favorite teachers" : "Find your language teacher"}</h1>
 				</div>
-				{favoritesOnly && <Link className={styles.backLink} href="/teachers">Browse teachers</Link>}
+					{favoritesOnly && <Link className={styles.backLink} to="/teachers">Browse teachers</Link>}
 			</div>
 			{!favoritesOnly && (
 				<Filters
@@ -128,7 +128,7 @@ export default function TeacherDirectory({ favoritesOnly = false }: TeacherDirec
 			) : (
 				<div className={styles.empty}>
 					<p>{favoritesOnly ? "No favorite teachers yet." : "No teachers match these filters."}</p>
-					{favoritesOnly && <Link href="/teachers">Explore teachers</Link>}
+					{favoritesOnly && <Link to="/teachers">Explore teachers</Link>}
 				</div>
 			)}
 			{!favoritesOnly && hasMore && <button className={styles.loadMore} type="button" onClick={loadMore} disabled={loadingMore || !sourceReady}>{loadingMore ? "Loading..." : "Load more"}</button>}

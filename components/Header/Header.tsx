@@ -1,25 +1,24 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../providers/AuthProvider";
 import { logOut } from "../../services/auth";
 import styles from "./Header.module.css";
 
 export default function Header() {
 	const { user, openAuthDialog } = useAuth();
-	const pathname = usePathname();
+	const { pathname } = useLocation();
 
 	return (
 		<header className={styles.header}>
-			<Link className={styles.brand} href="/" aria-label="LearnLingo home">
+			<Link className={styles.brand} to="/" aria-label="LearnLingo home">
 				<span className={styles.brandMark} aria-hidden="true" />
 				<span>LearnLingo</span>
 			</Link>
 			<nav className={styles.navigation} aria-label="Main navigation">
-				<Link href="/" className={pathname === "/" ? styles.active : undefined} aria-current={pathname === "/" ? "page" : undefined}>Home</Link>
-				<Link href="/teachers" className={pathname === "/teachers" ? styles.active : undefined} aria-current={pathname === "/teachers" ? "page" : undefined}>Teachers</Link>
-				{user && <Link href="/favorites" className={pathname === "/favorites" ? styles.active : undefined} aria-current={pathname === "/favorites" ? "page" : undefined}>Favorites</Link>}
+				<Link to="/" className={pathname === "/" ? styles.active : undefined} aria-current={pathname === "/" ? "page" : undefined}>Home</Link>
+				<Link to="/teachers" className={pathname === "/teachers" ? styles.active : undefined} aria-current={pathname === "/teachers" ? "page" : undefined}>Teachers</Link>
+				{user && <Link to="/favorites" className={pathname === "/favorites" ? styles.active : undefined} aria-current={pathname === "/favorites" ? "page" : undefined}>Favorites</Link>}
 			</nav>
 			<div className={styles.account}>
 				{user ? (

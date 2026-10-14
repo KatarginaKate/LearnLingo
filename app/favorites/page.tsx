@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import TeacherDirectory from "../../components/TeacherDirectory/TeacherDirectory";
 import { useAuth } from "../../providers/AuthProvider";
 
@@ -14,7 +14,7 @@ export default function FavoritesPage() {
 				<h1>Favorites are for signed-in learners</h1>
 				<p>Log in to save teachers and find them here later.</p>
 				<button type="button" onClick={() => openAuthDialog("login", "Sign in to access your favorites.")}>Log in</button>
-				<Link href="/teachers">Browse teachers</Link>
+				<Link to="/teachers">Browse teachers</Link>
 			</main>
 		);
 	}
