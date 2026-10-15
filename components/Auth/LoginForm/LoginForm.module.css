@@ -1,5 +1,5 @@
 .content {
-  color: #121417;
+  color: var(--foreground);
 }
 .title {
   margin: 0 0 20px;
@@ -13,7 +13,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  color: rgba(18, 20, 23, 0.8);
+  color: var(--foreground-subtle);
 }
 .form {
   display: flex;
@@ -28,11 +28,11 @@
   width: 100%;
   height: 54px;
   padding: 0 18px;
-  border: 1px solid rgba(18, 20, 23, 0.1);
+  border: 1px solid var(--border);
   border-radius: 12px;
   outline: none;
-  background: transparent;
-  color: #121417;
+  background: var(--background-elevated);
+  color: var(--foreground);
   font: inherit;
   font-weight: 400;
   font-size: 16px;
@@ -46,7 +46,7 @@
   border-color: #c23b3b;
 }
 .field input::placeholder {
-  color: #121417;
+  color: var(--foreground-muted);
   opacity: 1;
 }
 .visibility {
@@ -61,12 +61,12 @@
   justify-content: center;
   border: 0;
   background: none;
-  color: #121417;
+  color: var(--foreground);
   cursor: pointer;
   transition: color 160ms ease;
 }
 .visibility:hover {
-  color: #70510a;
+  color: var(--color-warning-strong);
 }
 .visibility svg {
   width: 20px;
@@ -111,21 +111,21 @@
 }
 .switch {
   margin-top: 12px;
-  color: #555;
+  color: var(--foreground-soft);
   font-size: 14px;
   text-align: center;
 }
 .switch button {
   border: 0;
   background: transparent;
-  color: #9a6b06;
+  color: var(--color-warning);
   font: inherit;
   font-weight: 700;
   cursor: pointer;
   transition: color 160ms ease;
 }
 .switch button:hover {
-  color: #70510a;
+  color: var(--color-warning-strong);
 }
 .visuallyHidden {
   position: absolute;

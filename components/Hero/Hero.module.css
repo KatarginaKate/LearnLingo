@@ -21,7 +21,7 @@
   justify-content: center;
   height: 100%;
   padding: clamp(28px, 4.4vw, 64px);
-  background: #f7f7f7;
+  background: var(--surface-soft);
 }
 
 .copy h1 {
@@ -30,7 +30,7 @@
   font-size: 48px;
   line-height: 1.17;
   letter-spacing: -0.02em;
-  color: #121417;
+  color: var(--foreground);
   text-wrap: balance;
 }
 
@@ -48,7 +48,7 @@
   font-size: 16px;
   line-height: 138%;
   letter-spacing: -0.02em;
-  color: #121417;
+  color: var(--foreground);
 }
 
 .callToAction {
@@ -59,12 +59,12 @@
   min-height: 60px;
   margin-top: 64px;
   border-radius: 12px;
-  background: #f4c550;
+  background: var(--color-accent);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.56;
-  color: #121417;
+  color: var(--foreground);
   transition:
     background-color 160ms ease,
     transform 160ms ease;
@@ -72,7 +72,7 @@
 
 .callToAction:hover {
   transform: translateY(-2px);
-  background: #ffdc86;
+  background: var(--color-accent-strong);
 }
 
 .visual {

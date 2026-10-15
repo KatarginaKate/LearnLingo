@@ -17,8 +17,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout() {
   return (
-    <html lang="en" className={roboto.variable}>
+    <html lang="en" className={roboto.variable} suppressHydrationWarning>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (() => {
+                try {
+                  const savedTheme = localStorage.getItem('learnlingo-theme');
+                  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  const theme = savedTheme || systemTheme;
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (error) {
+                  document.documentElement.setAttribute('data-theme', 'light');
+                }
+              })();
+            `,
+          }}
+        />
         <Providers>
           <AppRouter />
         </Providers>

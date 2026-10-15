@@ -1,6 +1,8 @@
 import Hero from "../components/Hero/Hero";
 import styles from "./page.module.css";
 
+export const instant = false;
+
 export default function Home() {
   return (
     <div className={styles.page}>

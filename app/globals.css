@@ -1,8 +1,51 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-accent: #F4C550;
-  --color-accent-soft: #FBE9BA;
+  --background: #f5f7fb;
+  --background-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f7f7f7;
+  --surface-muted: #f3f3f3;
+  --foreground: #121417;
+  --foreground-soft: #606267;
+  --foreground-muted: #8a8a89;
+  --foreground-subtle: rgba(18, 20, 23, 0.7);
+  --border: rgba(18, 20, 23, 0.1);
+  --card-border: transparent;
+  --shadow: rgb(18 20 23 / 6%);
+  --overlay: rgb(18 20 23 / 35%);
+  --color-accent: #f4c550;
+  --color-accent-soft: #fbe9ba;
+  --color-accent-strong: #ffdc86;
+  --color-success: #38a66a;
+  --color-warning: #9a6b06;
+  --color-warning-strong: #70510a;
+  --color-error: #b42318;
+  --button-dark: #121417;
+  --button-dark-hover: #34373b;
+}
+
+html[data-theme='dark'] {
+  --background: #0f172a;
+  --background-elevated: #111827;
+  --surface: #111827;
+  --surface-soft: #1f2937;
+  --surface-muted: #0b1220;
+  --foreground: #f3f4f6;
+  --foreground-soft: #d1d5db;
+  --foreground-muted: #a1a1aa;
+  --foreground-subtle: rgba(243, 244, 246, 0.7);
+  --border: rgba(148, 163, 184, 0.2);
+  --card-border: #334155;
+  --shadow: rgb(15 23 42 / 34%);
+  --overlay: rgb(2 6 23 / 68%);
+  --color-accent-soft: rgba(244, 197, 80, 0.22);
+  --color-accent-strong: #ffdfa0;
+  --color-success: #4ade80;
+  --color-warning: #f5d882;
+  --color-warning-strong: #f8e8ad;
+  --color-error: #fca5a5;
+  --button-dark: #f3f4f6;
+  --button-dark-hover: #d1d5db;
+  color-scheme: dark;
 }
 
 html {
@@ -24,6 +67,7 @@ body {
   font-family: var(--font-roboto), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 * {
@@ -41,6 +85,10 @@ html {
   color-scheme: light;
 }
 
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 .route-main {
   width: 100%;
   min-height: calc(100vh - 88px);
@@ -53,7 +101,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  color: #121417;
+  color: var(--foreground);
   text-align: center;
 }
 
@@ -63,7 +111,7 @@ html {
 }
 
 .private-state p {
-  color: #606267;
+  color: var(--foreground-soft);
 }
 
 .private-state button {
@@ -72,7 +120,7 @@ html {
   border: 0;
   border-radius: 10px;
   background: var(--color-accent);
-  color: #121417;
+  color: var(--foreground);
   font: inherit;
   font-weight: 700;
   cursor: pointer;
@@ -81,7 +129,7 @@ html {
 
 .private-state button:hover {
   transform: translateY(-1px);
-  background: #ffdc86;
+  background: var(--color-accent-strong);
 }
 
 @media (max-width: 560px) {

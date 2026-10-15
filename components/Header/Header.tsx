@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../providers/AuthProvider";
 import { logOut } from "../../services/auth";
@@ -8,6 +9,22 @@ import styles from "./Header.module.css";
 export default function Header() {
 	const { user, openAuthDialog } = useAuth();
 	const { pathname } = useLocation();
+	const [theme, setTheme] = useState<"light" | "dark">(() => {
+		if (typeof document !== "undefined" && document.documentElement.dataset.theme === "dark") {
+			return "dark";
+		}
+
+		return "light";
+	});
+
+	useEffect(() => {
+		document.documentElement.setAttribute("data-theme", theme);
+		localStorage.setItem("learnlingo-theme", theme);
+	}, [theme]);
+
+	const toggleTheme = () => {
+		setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+	};
 
 	return (
 		<header className={styles.header}>
@@ -21,6 +38,14 @@ export default function Header() {
 				{user && <Link to="/favorites" className={pathname === "/favorites" ? styles.active : undefined} aria-current={pathname === "/favorites" ? "page" : undefined}>Favorites</Link>}
 			</nav>
 			<div className={styles.account}>
+				<button
+					type="button"
+					className={styles.themeToggle}
+					onClick={toggleTheme}
+					aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+				>
+					<span aria-hidden="true">{theme === "dark" ? "☀" : "☾"}</span>
+				</button>
 				{user ? (
 					<button className={`${styles.login} ${styles.logout}`} type="button" onClick={() => void logOut()}>
 						<span>{user.displayName ?? "Account"}</span>
