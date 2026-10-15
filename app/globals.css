@@ -10,6 +10,11 @@
   --foreground-subtle: rgba(18, 20, 23, 0.7);
   --border: rgba(18, 20, 23, 0.1);
   --card-border: transparent;
+  --hero-border: rgba(0, 0, 0, 0.2);
+  --level-background: transparent;
+  --level-border: rgba(18, 20, 23, 0.2);
+  --level-foreground: #121417;
+  --dropdown-border: transparent;
   --shadow: rgb(18 20 23 / 6%);
   --overlay: rgb(18 20 23 / 35%);
   --color-accent: #f4c550;
@@ -35,6 +40,11 @@ html[data-theme='dark'] {
   --foreground-subtle: rgba(243, 244, 246, 0.7);
   --border: rgba(148, 163, 184, 0.2);
   --card-border: #334155;
+  --hero-border: #334155;
+  --level-background: #1f2937;
+  --level-border: #64748b;
+  --level-foreground: #e2e8f0;
+  --dropdown-border: #64748b;
   --shadow: rgb(15 23 42 / 34%);
   --overlay: rgb(2 6 23 / 68%);
   --color-accent-soft: rgba(244, 197, 80, 0.22);

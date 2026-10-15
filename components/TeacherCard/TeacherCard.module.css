@@ -260,8 +260,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #8a8a89;
-  font-weight: 500;
+  color: var(--foreground-muted);
 }
 
 .review span {
@@ -271,7 +270,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
-  color: #121417;
+  color: var(--foreground);
 }
 
 .review .star {
@@ -284,7 +283,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
-  color: #121417;
+  color: var(--foreground);
 }
 
 .readMore {
@@ -298,7 +297,7 @@
   line-height: 1.5;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #121417;
+  color: var(--foreground);
   cursor: pointer;
 }
 
@@ -322,18 +321,20 @@
 }
 
 .levels span {
-  border: 1px solid rgba(18, 20, 23, 0.2);
+  border: 1px solid var(--level-border);
   border-radius: 35px;
   padding: 8px 12px;
+  background: var(--level-background);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  color: #121417;
+  color: var(--level-foreground);
 }
 
 .levels .levelActive {
   border-color: var(--color-accent);
   background: var(--color-accent);
+  color: #121417;
 }
 
 .bookButton {
@@ -400,11 +401,12 @@
   }
 
   .cardLayout {
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 14px 0;
   }
 
   .photoColumn {
-    flex-basis: 88px;
+    flex: 0 0 100%;
   }
 
   .avatarWrap {
@@ -419,10 +421,27 @@
     font-size: 19px;
   }
 
+  .cardContent {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .cardHeader {
+    width: 100%;
+  }
+
   .metrics {
+    flex: 0 0 100%;
+    max-width: 100%;
     gap: 8px 12px;
     margin-left: 0;
     font-size: 11px;
+  }
+
+  .metrics > span {
+    min-width: 0;
+    white-space: normal;
   }
 
   .favorite {
@@ -436,5 +455,12 @@
 
   .cardFooter {
     margin-top: 16px;
+  }
+
+  .bookButton {
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 16px;
   }
 }
