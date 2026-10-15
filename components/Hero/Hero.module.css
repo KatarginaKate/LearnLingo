@@ -21,7 +21,9 @@
   justify-content: center;
   height: 100%;
   padding: clamp(28px, 4.4vw, 64px);
-  background: var(--surface-soft);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background: #f8f8f8;
 }
 
 .copy h1 {
