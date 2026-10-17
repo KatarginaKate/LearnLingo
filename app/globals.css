@@ -91,6 +91,10 @@ a {
   text-decoration: none;
 }
 
+.route-content {
+  padding-top: 68px;
+}
+
 html {
   color-scheme: light;
 }
